@@ -25,24 +25,6 @@
 
 body {margin: 0; padding: 0; background-color: var(--background-col);}
 
-.background {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  
-  transition: 0.2s;
-}
-.relative {
-  position: relative;
-  max-width: 250px;
-  padding: 1rem 2rem;
-  box-shadow: 3px 3px 25px rgba(0 0 0 / 0.2);
-  background-color: var(--card-col);
-  border-radius: 15px;
-  transition: 0.2s;
-}
 button.theme {
   position: absolute;
   top: 1rem;
@@ -63,12 +45,13 @@ h2, p {
 
 svg {fill: var(--main-txt-col);}
 
+/* 박스 높이 */
 .bt_box_36, .bt_box_48 {display: flex; justify-content: flex-start; align-items: center; background-color: rgba(0, 0, 0, 0.5); transition: 0.3s;}
 .bt_box_36 p, .bt_box_48 p {display: none;}
-.bt_box_36 {width: 36px; height: 36px; border-radius: 18px; padding-left: 4px;}
-.bt_box_48 {width: 48px; height: 48px; border-radius: 24px; padding-left: 12px;}
+.bt_box_36 {width: 100%; height: 36px; border-radius: 18px; padding-left: 4px;}
+.bt_box_48 {width: 100%; height: 48px; border-radius: 24px; padding-left: 12px;}
 
-
+/* 아이콘 */
 .icon_box_48, .icon_box_36, .icon_box_34, .icon_box_28, .icon_box_24, .icon_box_20 {flex-shrink: 0; border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: 0.3s;}
 .icon_box_48.hover:hover, .icon_box_36, .icon_box_34, .icon_box_28, .icon_box_24, .icon_box_20 {background-color: #c2c2c2;  }
 
@@ -87,24 +70,43 @@ svg {fill: var(--main-txt-col);}
 .icon_box_20 {width: 20px; height: 20px; }
 
 
+main {display: flex; }
 
-.side_nav_menu_bt {position: fixed; top: 10px; left: 10px; z-index: 100;}
+/* 1. 메뉴버튼 */
+main .side_nav_menu_bt {position: fixed; width:auto; top: 10px; left: 10px; z-index: 100;}
+
+/* 2. 사이드메뉴 */
+main .side_L_container {flex-shrink:0; width: 280px; /*width: 68px;*/ height: 100vh; background-color: var(--side-box-col);}
+main .side_L_container .side_menu_area {padding: 70px 0px 28px 0px; height: 100%; display: flex; gap: 8px; flex-direction: column; justify-content: space-between; align-items: flex-start;}
+
+/* 2-1. 사이드메뉴_채팅그룹 */
+main .side_L_container .side_menu_area .chat_bt_box {flex-grow:1; display: flex; flex-direction: column; gap: 8px; overflow: hidden; background-color: rgba(0, 0, 0, 0.1); }
+
+/* 2-1-1. 사이드메뉴_채팅그룹_새채팅 */
+main .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box {padding: 0px 10px;}
+main .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box .bt_box_48 {width: 48px;}
+
+/* 2-1-2. 사이드메뉴_채팅그룹_채팅리스트 */
+main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto;}
+main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box .bt_box_36 {width:36px;}
+main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {padding: 0 0 0 16px; display: flex; flex-direction: column; gap: 8px; background-color: rgba(0, 0, 0, 0.1);}
 
 
-.side_L_container {width: 68px; height: 100vh; background-color: var(--side-box-col); position: fixed;}
-.side_L_container .side_menu_area {padding: 70px 0px 28px 0px; height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;}
-.side_L_container .side_menu_area .chat_bt_box {flex-grow:1; display: flex; flex-direction: column; gap: 8px; overflow: hidden; background-color: rgba(0, 0, 0, 0.1); }
-
-.side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box {padding: 0px 10px;}
-.side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box a {}
-
-.side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto;}
-.side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {padding: 0 0 0 16px; display: flex; flex-direction: column; gap: 8px; background-color: rgba(0, 0, 0, 0.1);}
+/* 2-2. 사이드메뉴_설정 */
+main .side_L_container .setting_list_bt_box .bt_box_48 {width: 48px;}
+main .side_L_container .setting_list_bt_box {}
+main .side_L_container .setting_list_bt_box ul {padding: 0px 10px; display: flex; flex-direction: column; gap: 8px;}
 
 
+/* 3. 우측_콘텐츠 */
+main .side_R_container {background-color: #2B2171; width: 100%; height: 100vh; }
 
-.side_L_container .setting_list_bt_box {}
-.side_L_container .setting_list_bt_box ul {padding: 0px 10px; display: flex; flex-direction: column; gap: 8px;}
+/* 3-1. 우측_상단바 */
+main .side_R_container .top_bar {width: 100%; height: 70px; background-color: rgba(0, 0, 0, 0.2); }
 
 
+/* 3-2. 우측_콘텐츠 */
+main .side_R_container .main_cont_container .main_cont_layout { width: 830px; margin: 0 auto; height: calc(100vh - 70px); overflow: hidden; background-color: rgba(0, 0, 0, 0.2); }
+main .side_R_container .main_cont_container .main_cont_layout .search_a_area {  }
+main .side_R_container .main_cont_container .main_cont_layout .search_q_area {  }
 
