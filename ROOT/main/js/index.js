@@ -37,3 +37,35 @@ function clickLightMode() {
     button.classList.add('light_bt');
     status = false
 }
+
+
+
+
+	/* mobile nav */	
+	$('.side_nav_menu_bt a').on('click', function(e) {
+		e.preventDefault();
+        alert("0");
+
+        $('main').removeClass('side_off');
+        $('main').addClass('side_on');
+		// var $target = $(this).parent();
+		// $('#mobile_gnb li').not($target).removeClass('on');
+		// $target.toggleClass('on');
+	});	
+	// $('#mobile_gnb .depth2 > li:not(.no_child) > a').on('click', function(e) {
+	// 	e.preventDefault();
+	// 	var $target = $(this).parent();
+	// 	$('#mobile_gnb .depth2 > li').not($target).removeClass('on');
+	// 	$target.toggleClass('on');
+	// });
+	// $('#mobile_header .btn_menu').on('click', function(e) {
+	// 	e.preventDefault();
+	// 	$('#mobile_header').toggleClass('menu_open');
+	// 	$('#mobile_gnb li').removeClass('on');
+	// 	$('.dimmed_bg').toggle();
+	// });
+	// $('.dimmed_bg').on('click', function(e) {
+	// 	e.preventDefault();
+	// 	$('#mobile_header').removeClass('menu_open');
+	// 	$('.dimmed_bg').hide();
+	// });

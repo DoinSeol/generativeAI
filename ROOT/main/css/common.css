@@ -3,6 +3,9 @@
   --side-box-col: #1E1F20;
   --active-box-col: #2B2171;
   --hover-box-col: #333333;
+  --hover-bt-col: rgba(255, 255, 255, 0.15);
+  --bt-col: rgba(255, 255, 255, 0.2);
+  --bt-border-col: rgba(255, 255, 255, 0.3);
   --box-col: #1E1F20;
   --main-txt-col: #ffffff;
   --sub-txt-col: #9B9B9B;
@@ -10,13 +13,13 @@
 }
 
 :root[data-theme='light'] {
-  /* --background-col: rgb(255 237 213);
-  --card-col: #fff;
-  --text-col: rgb(68 64 60); */
   --background-col: #ffffff;
   --side-box-col: #ececec;
   --active-box-col: #2B2171;
   --hover-box-col: #333333;
+  --hover-bt-col: rgba(0, 0, 0, 0.15);
+  --bt-col: rgba(0, 0, 0, 0.2);
+  --bt-border-col: rgba(0, 0, 0, 0.3);
   --box-col: #1E1F20;
   --main-txt-col: #333333;
   --sub-txt-col: #9B9B9B;
@@ -25,19 +28,16 @@
 
 body {margin: 0; padding: 0; background-color: var(--background-col);}
 
+button {border: none; cursor: pointer; display: flex; justify-content: center; align-items: center;}
 button.theme {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  height: 30px;
+  border-radius: 15px;
+  padding: 0 16px;
   color: #fff;
-  cursor: pointer;
   background-color: rgb(245 158 11);
 }
-h2, p {
-  color: var(--text-col);
+h2, p, a {
+  color: var(--main-txt-col);
   transition: 0.2s;
 }
 
@@ -45,16 +45,21 @@ h2, p {
 
 svg {fill: var(--main-txt-col);}
 
+/* .no_hover:hover {background-color: transparent !important; } */
+
 /* 박스 높이 */
-.bt_box_36, .bt_box_48 {display: flex; justify-content: flex-start; align-items: center; background-color: rgba(0, 0, 0, 0.5); transition: 0.3s;}
-.bt_box_36 p, .bt_box_48 p {display: none;}
-.bt_box_36 {width: 100%; height: 36px; border-radius: 18px; padding-left: 4px;}
-.bt_box_48 {width: 100%; height: 48px; border-radius: 24px; padding-left: 12px;}
+.bt_box_36, .bt_box_48 {display: flex; justify-content: flex-start; align-items: center; transition: 0.3s;}
+.bt_box_36:hover, .bt_box_48:hover {background-color: var(--hover-bt-col);}
+
+.bt_box_36 {width: 100%; height: 36px; border-radius: 18px;}
+.bt_box_36 > a:first-child {height: 100%; display: flex; gap: 8px; flex-grow: 1; justify-content: flex-start; align-items: center; padding:0 0 0 6px;}
+.bt_box_36 > button {margin:0 4px 0 0;}
+.bt_box_48 {width: 100%; height: 48px;  gap: 8px; border-radius: 24px; padding: 0 0 0 12px; background-color: rgba(0, 0, 0, 0.2);}
 
 /* 아이콘 */
-.icon_box_48, .icon_box_36, .icon_box_34, .icon_box_28, .icon_box_24, .icon_box_20 {flex-shrink: 0; border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: 0.3s;}
-.icon_box_48.hover:hover, .icon_box_36, .icon_box_34, .icon_box_28, .icon_box_24, .icon_box_20 {background-color: #c2c2c2;  }
-
+.icon_box_48, .icon_box_36, .icon_box_34, .icon_box_28, .icon_box_24, .icon_box_20 {flex-shrink: 0; border:none; border-radius: 50%; background-color: transparent; display: flex; justify-content: center; align-items: center; transition: 0.3s;}
+/* .icon_box_48.hover:hover, .icon_box_36, .icon_box_34, .icon_box_28, .icon_box_24, .icon_box_20 {background-color: #c2c2c2;  } */
+.icon_box_28:hover, .icon_box_48:hover {background-color: var(--hover-bt-col);  }
 .icon_box_48 {width: 48px; height: 48px; }
 .icon_box_48 svg {width: 24px; height: auto; }
 
@@ -63,46 +68,93 @@ svg {fill: var(--main-txt-col);}
 .icon_box_34 {width: 34px; height: 34px; }
 
 .icon_box_28 {width: 28px; height: 28px; }
-.icon_box_28 svg {width: 20px; height: auto; }
+.icon_box_28 svg {width: auto; height: 20px; }
 
 .icon_box_24 {width: 24px; height: 24px; }
 
 .icon_box_20 {width: 20px; height: 20px; }
 
+.flex_row {display: flex; flex-direction: row;}
+.flex_column {display: flex; flex-direction: column;}
 
-main {display: flex; }
+main {}
 
 /* 1. 메뉴버튼 */
 main .side_nav_menu_bt {position: fixed; width:auto; top: 10px; left: 10px; z-index: 100;}
 
-/* 2. 사이드메뉴 */
-main .side_L_container {flex-shrink:0; width: 280px; /*width: 68px;*/ height: 100vh; background-color: var(--side-box-col);}
-main .side_L_container .side_menu_area {padding: 70px 0px 28px 0px; height: 100%; display: flex; gap: 8px; flex-direction: column; justify-content: space-between; align-items: flex-start;}
+/* 2. 사이드메뉴 - side_off */
+main .side_L_container { width: 68px; flex-shrink:0; height: 100vh; background-color: var(--side-box-col);}
+main .side_L_container .side_menu_area {padding: 70px 0px 28px 0px; height: 100%; gap: 8px; justify-content: space-between; align-items: flex-start;}
 
-/* 2-1. 사이드메뉴_채팅그룹 */
-main .side_L_container .side_menu_area .chat_bt_box {flex-grow:1; display: flex; flex-direction: column; gap: 8px; overflow: hidden; background-color: rgba(0, 0, 0, 0.1); }
+main.side_off .bt_box_48 p, main.side_off .chat_list_bt_box {display: none;}
 
-/* 2-1-1. 사이드메뉴_채팅그룹_새채팅 */
+
+/* 2-1. 사이드메뉴_채팅그룹 - side_off */
+main .side_L_container .side_menu_area .chat_bt_box {flex-grow:1; gap: 8px; overflow: hidden; }
+
+/* 2-1-1. 사이드메뉴_채팅그룹_새채팅 - side_off */
 main .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box {padding: 0px 10px;}
 main .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box .bt_box_48 {width: 48px;}
 
-/* 2-1-2. 사이드메뉴_채팅그룹_채팅리스트 */
+/* 2-1-2. 사이드메뉴_채팅그룹_채팅리스트 - side_off */
 main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto;}
 main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box .bt_box_36 {width:36px;}
-main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {padding: 0 0 0 16px; display: flex; flex-direction: column; gap: 8px; background-color: rgba(0, 0, 0, 0.1);}
+main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {padding: 0 0 0 16px; gap: 8px;}
 
 
-/* 2-2. 사이드메뉴_설정 */
+/* 2-2. 사이드메뉴_설정 - side_off */
 main .side_L_container .setting_list_bt_box .bt_box_48 {width: 48px;}
-main .side_L_container .setting_list_bt_box {}
-main .side_L_container .setting_list_bt_box ul {padding: 0px 10px; display: flex; flex-direction: column; gap: 8px;}
+main .side_L_container .setting_list_bt_box ul {padding: 0px 10px; gap: 8px;}
+main .side_L_container .setting_list_bt_box .bt_box_48.no_back {background-color: transparent;}
+main .side_L_container .setting_list_bt_box .bt_box_48.no_back:hover {background-color: var(--hover-bt-col);}
+
+
+/* 메뉴 오픈 - START ----------------------------------------------------------------------------------- */
+/* 1. 메뉴버튼 */
+main.side_on .side_nav_menu_bt {position: fixed; width:auto; top: 10px; left: 10px; z-index: 100;}
+
+/* 2. 사이드메뉴 - side_off */
+main.side_on .side_L_container { width: 280px; flex-shrink:0; height: 100vh; background-color: var(--side-box-col);}
+main.side_on .side_L_container .side_menu_area {padding: 70px 0px 28px 0px; height: 100%; gap: 8px; justify-content: space-between; align-items: flex-start;}
+
+main.side_on.bt_box_48 p, main.side_on.chat_list_bt_box {display: block;}
+
+
+/* 2-1. 사이드메뉴_채팅그룹 - side_off */
+main.side_on .side_L_container .side_menu_area .chat_bt_box {flex-grow:1; gap: 8px; overflow: hidden;  }
+
+/* 2-1-1. 사이드메뉴_채팅그룹_새채팅 - side_off */
+main.side_on .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box {padding: 0px 10px;}
+main.side_on .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box .bt_box_48 {width: 100%;}
+
+/* 2-1-2. 사이드메뉴_채팅그룹_채팅리스트 - side_off */
+main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto;}
+main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box .bt_box_36 {width:100%;}
+main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {padding: 0 16px 0 16px; gap: 8px; }
+
+
+/* 2-2. 사이드메뉴_설정 - side_off */
+main.side_on .side_L_container .setting_list_bt_box .bt_box_48 {width: 100%;}
+main.side_on .side_L_container .setting_list_bt_box ul {padding: 0px 10px; gap: 8px;}
+main .side_L_container .setting_list_bt_box .bt_box_48.no_back {background-color: transparent;}
+main .side_L_container .setting_list_bt_box .bt_box_48.no_back:hover {background-color: var(--hover-bt-col);}
+/* 메뉴 오픈 - END ----------------------------------------------------------------------------------- */
+
+
 
 
 /* 3. 우측_콘텐츠 */
-main .side_R_container {background-color: #2B2171; width: 100%; height: 100vh; }
+main .side_R_container { width: 100%; height: 100vh; }
 
 /* 3-1. 우측_상단바 */
-main .side_R_container .top_bar {width: 100%; height: 70px; background-color: rgba(0, 0, 0, 0.2); }
+main .side_R_container .top_bar {width: 100%; height: 70px; padding: 0 16px; justify-content:space-between; align-items: center; }
+
+main .side_R_container .top_bar .logo_box {width: auto; flex-grow: 1; }
+main .side_R_container .top_bar .logo_box img {width: auto; height: 40px; }
+
+main .side_R_container .login_box {width: auto; gap: 8px; }
+main .side_R_container .login_box a {display: flex; justify-content: center; align-items: center; border: 1px solid var(--bt-border-col); background-color: var(--hover-bt-col); height: 30px; border-radius: 15px; padding: 0 12px; font-size: 0.875rem;    }
+main .side_R_container .login_box a:hover {background-color: var(--bt-col);}
 
 
 /* 3-2. 우측_콘텐츠 */
