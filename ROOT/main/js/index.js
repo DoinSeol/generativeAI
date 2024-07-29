@@ -2,6 +2,13 @@ const button = document.querySelector('.theme')
 const userTheme = localStorage.getItem('theme')
 let status = false
 
+// alert(userTheme);
+
+$(document).ready(function(){
+    //실행내용
+
+})
+
 // 처음 이용객의 테마를 읽음
 document.addEventListener('DOMContentLoaded', () => {
     if (userTheme === 'dark') {
