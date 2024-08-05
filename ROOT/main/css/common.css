@@ -2,8 +2,9 @@
   --background-col: #131314;
   --side-box-col: #1E1F20;
   --active-box-col: #2B2171;
+  --basic-box-col: rgba(255, 255, 255, 0.15);
   --hover-box-col: #333333;
-  --hover-bt-col: rgba(255, 255, 255, 0.15);
+  --hover-bt-col: rgba(255, 255, 255, 0.2);
   --bt-col: rgba(255, 255, 255, 0.2);
   --bt-border-col: rgba(255, 255, 255, 0.3);
   --box-col: #1E1F20;
@@ -30,6 +31,7 @@
   --background-col: #ffffff;
   --side-box-col: #ececec;
   --active-box-col: #2B2171;
+  --basic-box-col: rgba(0, 0, 0, 0.2);
   --hover-box-col: #333333;
   --hover-bt-col: rgba(0, 0, 0, 0.15);
   --bt-col: rgba(0, 0, 0, 0.2);
@@ -67,32 +69,27 @@ svg {fill: var(--main-txt-col);}
 
 .bt_box_36 {width: 100%; height: 36px; border-radius: 18px;}
 
-.bt_box_36 a, .bt_box_48 a {width: 100%; }
-
-
 .bt_box_36 > a:first-child {height: 100%; display: flex; gap: 8px; flex-grow: 1; justify-content: flex-start; align-items: center;}
 .bt_box_36 > a p {width: calc(100% - 36px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .bt_box_36 > a button {margin:0 4px 0 0;}
 
-.bt_box_48 {width: 100%; height: 48px;  gap: 8px; border-radius: 24px; padding: 0 0 0 12px; background-color: rgba(0, 0, 0, 0.2);}
+.bt_box_48 {width: 100%; height: 48px;  gap: 8px; border-radius: 24px; padding: 0 0 0 12px; background-color: var(--basic-box-col);}
 .bt_box_48 p {width: calc(100% - 36px); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 
 
-
-/* 아이콘 */
+/* 아이콘 박스 */
 .icon_box_48, .icon_box_36, .icon_box_34, .icon_box_28, .icon_box_24, .icon_box_20 {flex-shrink: 0; border:none; border-radius: 50%; background-color: transparent; display: flex; justify-content: center; align-items: center; transition: 0.3s;}
 /* .icon_box_48.hover:hover, .icon_box_36, .icon_box_34, .icon_box_28, .icon_box_24, .icon_box_20 {background-color: #c2c2c2;  } */
-.icon_box_28:hover, .icon_box_48:hover {background-color: var(--hover-bt-col);  }
-.icon_box_28.no_hover:hover, .icon_box_48.no_hover:hover {background-color: transparent;  }
+.icon_box_24:hover, .icon_box_28:hover, .icon_box_34:hover, .icon_box_48:hover {background-color: var(--hover-bt-col);  }
+.icon_box_24.no_hover:hover, .icon_box_28.no_hover:hover, .icon_box_48.no_hover:hover {background-color: transparent;  }
+
 .icon_box_48 {width: 48px; height: 48px; }
 .icon_box_48 svg {width: 24px; height: auto; }
-
 .icon_box_36 {width: 36px; height: 36px; }
-
 .icon_box_34 {width: 34px; height: 34px; }
-
+.icon_box_34 svg {width: auto; height: 18px; }
 .icon_box_28 {width: 28px; height: 28px; }
-.icon_box_28 svg {width: auto; height: 20px; }
+.icon_box_28 svg {width: auto; height: 16px; }
 
 .icon_box_24 {width: 24px; height: 24px; }
 
@@ -100,6 +97,8 @@ svg {fill: var(--main-txt-col);}
 
 .flex_row {display: flex; flex-direction: row;}
 .flex_column {display: flex; flex-direction: column;}
+
+
 
 main {}
 
@@ -109,6 +108,8 @@ main .side_nav_menu_bt {position: fixed; width:auto; top: 10px; left: 10px; z-in
 /* 2. 사이드메뉴 - side_off */
 main .side_L_container { width: 68px; flex-shrink:0; height: 100vh; background-color: var(--side-box-col); transition: 0.5s;}
 main .side_L_container .side_menu_area {padding: 70px 0px 28px 0px; height: 100%; gap: 8px; justify-content: space-between; align-items: flex-start;}
+
+main .side_L_container .bt_box_36 a, main .side_L_container .bt_box_48 a {width: 100%; }
 
 main.side_off .bt_box_48 p, main.side_off .chat_list_bt_box {display: none;}
 
@@ -183,7 +184,16 @@ main .side_R_container .login_box a:hover {background-color: var(--bt-col);}
 
 
 /* 3-2. 우측_콘텐츠 */
-main .side_R_container .main_cont_container .main_cont_layout { width: 830px; margin: 0 auto; height: calc(100vh - 70px); overflow: hidden; background-color: rgba(0, 0, 0, 0.2); }
-main .side_R_container .main_cont_container .main_cont_layout .search_a_area {  }
-main .side_R_container .main_cont_container .main_cont_layout .search_q_area {  }
+main .side_R_container .bt_box_48 {padding: 8px;}
+
+
+main .side_R_container .main_cont_container .main_cont_layout { width: 862px; padding: 0 1rem; margin: 0 auto; height: calc(100vh - 70px); overflow: hidden; display: flex; flex-direction: column;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area { width: 100%; overflow-y: auto; background-color: aquamarine; flex-grow: 1;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area {width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2);}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area ul .cont_question {}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area ul .cont_answer {}
+
+main .side_R_container .main_cont_container .main_cont_layout .search_q_area { width: 100%; padding: 8px 0; height:auto;}
+main .side_R_container .main_cont_container .main_cont_layout .search_q_area .bt_box_48.no_back:hover {background-color: var(--hover-bt-col);}
+main .side_R_container .main_cont_container .main_cont_layout textarea { width: 100%; border: none; outline: none; resize: none; background-color: transparent; color: var(--main-txt-col); }
 
