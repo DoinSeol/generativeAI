@@ -42,7 +42,8 @@
   --point-txt-col: rgb(245 245 244);
 }
 
-body {margin: 0; padding: 0; background-color: var(--background-col);}
+
+body {margin: 0; padding: 0; background-color: var(--background-col);color: var(--main-txt-col); line-height: 1.4;}
 
 button {border: none; cursor: pointer; display: flex; justify-content: center; align-items: center;}
 button.theme {
@@ -52,10 +53,7 @@ button.theme {
   color: #fff;
   background-color: rgb(245 158 11);
 }
-h2, p, a {
-  color: var(--main-txt-col);
-  transition: 0.2s;
-}
+a {color: var(--main-txt-col); transition: 0.2s;}
 
 
 
@@ -102,6 +100,12 @@ svg {fill: var(--main-txt-col);}
 
 main {}
 
+main .side_L_container ol, main .side_L_container ul, main .side_L_container li {list-style: none;
+
+  
+}
+
+/* 메뉴 닫기 - START ----------------------------------------------------------------------------------- */
 /* 1. 메뉴버튼 */
 main .side_nav_menu_bt {position: fixed; width:auto; top: 10px; left: 10px; z-index: 100;}
 
@@ -110,9 +114,11 @@ main .side_L_container { width: 68px; flex-shrink:0; height: 100vh; background-c
 main .side_L_container .side_menu_area {padding: 70px 0px 28px 0px; height: 100%; gap: 8px; justify-content: space-between; align-items: flex-start;}
 
 main .side_L_container .bt_box_36 a, main .side_L_container .bt_box_48 a {width: 100%; }
+main .side_L_container .chat_list_bt_box .chat_list > h3 {padding: 10px 16px;}
+body > main > div.side_L_container > div > div.chat_bt_box.flex_column > div.chat_list_bt_box > div > h3
 
 main.side_off .bt_box_48 p, main.side_off .chat_list_bt_box {display: none;}
-
+main.side_off .bt_box_48 p, main.side_off .chat_list_bt_box .chat_list {}
 
 /* 2-1. 사이드메뉴_채팅그룹 - side_off */
 main .side_L_container .side_menu_area .chat_bt_box {flex-grow:1; gap: 8px; overflow: hidden; }
@@ -122,20 +128,22 @@ main .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box {padding
 main .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box .bt_box_48 {width: 48px;}
 
 /* 2-1-2. 사이드메뉴_채팅그룹_채팅리스트 - side_off */
-main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto;}
+main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto; gap: 8px;}
 main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box .bt_box_36 {width:36px; overflow-x: hidden;}
 main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {gap: 8px;}
 main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box > ul {padding: 0 0 0 16px; gap: 8px;}
-
 
 /* 2-2. 사이드메뉴_설정 - side_off */
 main .side_L_container .setting_list_bt_box .bt_box_48 {width: 48px;}
 main .side_L_container .setting_list_bt_box ul {padding: 0px 10px; gap: 8px;}
 main .side_L_container .setting_list_bt_box .bt_box_48.no_back {background-color: transparent;}
 main .side_L_container .setting_list_bt_box .bt_box_48.no_back:hover {background-color: var(--hover-bt-col);}
+/* 메뉴 닫기 - END ----------------------------------------------------------------------------------- */
 
 
-/* 메뉴 오픈 - START ----------------------------------------------------------------------------------- */
+
+
+/* 메뉴 열기 - START ----------------------------------------------------------------------------------- */
 /* 1. 메뉴버튼 */
 main.side_on .side_nav_menu_bt {position: fixed; width:auto; top: 10px; left: 10px; z-index: 100;}
 
@@ -156,7 +164,7 @@ main.side_on .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box 
 /* 2-1-2. 사이드메뉴_채팅그룹_채팅리스트 - side_off */
 main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto;}
 main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box .bt_box_36 {width:100%; padding: 0 8px;}
-main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {padding: 0 16px 0 16px; gap: 8px; }
+main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {padding: 0 16px 0 16px; gap: 4px; }
 
 
 /* 2-2. 사이드메뉴_설정 - side_off */
@@ -164,16 +172,16 @@ main.side_on .side_L_container .setting_list_bt_box .bt_box_48 {width: 100%;}
 main.side_on .side_L_container .setting_list_bt_box ul {padding: 0px 10px; gap: 8px;}
 main .side_L_container .setting_list_bt_box .bt_box_48.no_back {background-color: transparent;}
 main .side_L_container .setting_list_bt_box .bt_box_48.no_back:hover {background-color: var(--hover-bt-col);}
-/* 메뉴 오픈 - END ----------------------------------------------------------------------------------- */
+/* 메뉴 열기 - END ----------------------------------------------------------------------------------- */
 
 
 
 
-/* 3. 우측_콘텐츠 */
+/* 3. 우측_콘텐츠 ------------------------------------------------------------------------------------ */
 main .side_R_container { width: 100%; height: 100vh; }
 
 /* 3-1. 우측_상단바 */
-main .side_R_container .top_bar {width: 100%; height: 70px; padding: 0 16px; justify-content:space-between; align-items: center; }
+main .side_R_container .top_bar {width: 100%; height: 64px; padding: 0 16px; margin-bottom: 6px; justify-content:space-between; align-items: center; }
 
 main .side_R_container .top_bar .logo_box {width: auto; flex-grow: 1; }
 main .side_R_container .top_bar .logo_box img {width: auto; height: 40px; }
@@ -186,14 +194,30 @@ main .side_R_container .login_box a:hover {background-color: var(--bt-col);}
 /* 3-2. 우측_콘텐츠 */
 main .side_R_container .bt_box_48 {padding: 8px;}
 
+/* 질문 text 영역 */
+main .side_R_container .main_cont_container .main_cont_layout { padding: 0 1rem; height: calc(100vh - 70px); overflow: hidden; display: flex; flex-direction: column;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area {width: 100%; margin:8px 0px; overflow-y: auto;/* background-color: aquamarine;*/ flex-grow: 1;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area {width: 862px; margin: 0 auto; min-height: 100%; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: 32px;}
 
-main .side_R_container .main_cont_container .main_cont_layout { width: 862px; padding: 0 1rem; margin: 0 auto; height: calc(100vh - 70px); overflow: hidden; display: flex; flex-direction: column;}
-main .side_R_container .main_cont_container .main_cont_layout .contents_area { width: 100%; overflow-y: auto; background-color: aquamarine; flex-grow: 1;}
-main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area {width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.2);}
-main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area ul .cont_question {}
-main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area ul .cont_answer {}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_question {padding-right: 40px; padding-left: 40px; position: relative;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_question::before {position: absolute; top: 2px; right:0; content:""; width: 28px; height: 28px; background: url("../images/icon/icon_question.png") no-repeat; background-size: cover; background-position: top right;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_question .question_list {display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end;  }
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_question .question_list p {display: inline-block; background-color: var(--basic-box-col); min-height: 28px; padding: 8px 16px; border-radius: 8px;}
 
-main .side_R_container .main_cont_container .main_cont_layout .search_q_area { width: 100%; padding: 8px 0; height:auto;}
+/* 대답 text 영역 */
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer {padding-left: 40px; position: relative;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer::before {position: absolute; top: -2px; left:0; content:""; width: 28px; height: 28px; background: url("../images/icon/icon_answer.png") no-repeat; background-size: cover; background-position: top left;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_list { display: flex; flex-direction: column; gap: 16px; }
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_list ol { display: flex; flex-direction: column; gap: 8px; }
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_list ol ul { list-style-type: disc;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_list ol ul > ul { list-style-type: circle;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_list ol h3 {font-weight: 500;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_list ol span {font-weight: 500;}
+
+
+
+/* 질문 바 영역 */
+main .side_R_container .main_cont_container .main_cont_layout .search_q_area { width: 862px; margin: 0 auto; padding: 8px 0; height:auto;}
 main .side_R_container .main_cont_container .main_cont_layout .search_q_area .bt_box_48.no_back:hover {background-color: var(--hover-bt-col);}
 main .side_R_container .main_cont_container .main_cont_layout textarea { width: 100%; border: none; outline: none; resize: none; background-color: transparent; color: var(--main-txt-col); }
 
