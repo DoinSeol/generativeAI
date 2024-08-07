@@ -57,25 +57,23 @@ function clickLightMode() {
       $('main').addClass('side_off')
     }
 
-
-		// var $target = $(this).parent();
-		// $('#mobile_gnb li').not($target).removeClass('on');
-		// $target.toggleClass('on');
 	});	
-	// $('#mobile_gnb .depth2 > li:not(.no_child) > a').on('click', function(e) {
-	// 	e.preventDefault();
-	// 	var $target = $(this).parent();
-	// 	$('#mobile_gnb .depth2 > li').not($target).removeClass('on');
-	// 	$target.toggleClass('on');
-	// });
-	// $('#mobile_header .btn_menu').on('click', function(e) {
-	// 	e.preventDefault();
-	// 	$('#mobile_header').toggleClass('menu_open');
-	// 	$('#mobile_gnb li').removeClass('on');
-	// 	$('.dimmed_bg').toggle();
-	// });
-	// $('.dimmed_bg').on('click', function(e) {
-	// 	e.preventDefault();
-	// 	$('#mobile_header').removeClass('menu_open');
-	// 	$('.dimmed_bg').hide();
-	// });
+
+  // 툴팁 - 팝업오픈
+	$('.chat_list button.icon_box_28').on('click', function() {
+    const clientRect = this.getBoundingClientRect(); // DomRect 구하기 (각종 좌표값이 들어있는 객체)
+    const relativeTop = clientRect.top; // Viewport의 시작지점을 기준으로한 상대좌표 Y 값.
+
+    $('.list_tooltip_menu').css('top', relativeTop);
+    $('.modal_list_tooltip_menu').fadeIn(100);
+	});	
+
+
+  // 툴팁 - 외부영역 클릭 시 팝업 닫기
+  $(document).mouseup(function (e){
+    var LayerPopup = $(".modal_list_tooltip_menu");
+    if(LayerPopup.has(e.target).length === 0){
+      $('.modal_list_tooltip_menu').fadeOut(100);
+    }
+  });
+
