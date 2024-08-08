@@ -79,25 +79,15 @@ function clickLightMode() {
 
 
   // 내활동
-  const btns = document.querySelectorAll(".faq__btn");
+	// $('.cont_timeline_list_title_btn').on('click', function() {
 
-  btns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const faqItem = btn.parentNode;
-      const isActive = faqItem.classList.contains("active");
+  //   const list_container = $(this).closest('li');
+  //   const slide_container = $(list_container).children('.timeline_list_box');
 
-      removeActiveClasses();
+  //   $(slide_container).slideToggle();
+	// });	
 
-      if (!isActive) {
-        faqItem.classList.add("active");
-      }
-    });
-  });
-
-  function removeActiveClasses() {
-    btns.forEach((btn) => {
-      btn.parentNode.classList.remove("active");
-    });
-  }
-
+  $('.cont_timeline_list_title_box').on('click', function() {
+    $(this).siblings('.timeline_list_box').slideToggle();
+	});	
 
