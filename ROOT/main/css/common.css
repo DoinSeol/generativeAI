@@ -251,7 +251,7 @@ main .side_R_container .top_bar .logo_box {width: auto; }
 main .side_R_container .top_bar .logo_box img {width: auto; height: 32px; margin-top: 8px}
 
 main .side_R_container .login_box {width: auto; gap: 6px; flex-grow: 1; justify-content: flex-end; align-items: flex-start;}
-main .side_R_container .login_box a {display: flex; justify-content: center; align-items: center; border: 1px solid var(--top-bt-border-col); background-color: var(--top-bt-col); height: 30px; border-radius: 15px; padding: 0 12px; font-size: 0.75rem;    }
+main .side_R_container .login_box a {font-size: 0.875rem; border: 1px solid var(--top-bt-border-col); background-color: var(--top-bt-col); display: flex; justify-content: center; align-items: center; height: 30px; border-radius: 15px; padding: 0 12px; }
 main .side_R_container .login_box a:hover {background-color: var(--top-hover-bt-col); font-weight: 500;}
 
 
@@ -351,10 +351,12 @@ main .side_R_container .main_cont_container .main_cont_layout .timeline_area .co
 
 
 @media (max-width: 1143px) {
+  html, body, a {font-size: 14px;}
+
+  main .side_R_container .main_cont_container .main_cont_layout .layout_w {gap: 40px;}
   main .side_L_container {width: 0px; position: fixed; top:0; left: 0; z-index: 99;}
   main .side_R_container .top_bar {padding-left: 68px;}
   main .side_R_container .top_bar .logo_box img {height: 28px;}
-  html, body, a {font-size: 14px;}
 }
 
 @media (max-width: 600px) {
