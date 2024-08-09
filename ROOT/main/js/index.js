@@ -44,8 +44,6 @@ function clickLightMode() {
 }
 
 
-
-
 /* mobile nav */	
 $('.side_nav_menu_bt a').on('click', function() {
   // e.preventDefault();
@@ -58,6 +56,24 @@ $('.side_nav_menu_bt a').on('click', function() {
   }
 
 });	
+
+$(window).resize(function(){ 
+  if (window.innerWidth < 1143) {
+    /* 이하일때의 스크립트 */ 
+    if($("main").hasClass("side_on")) {
+      $('main').removeClass('side_on');
+      $('main').addClass('side_off');
+    }
+  } 
+  // else {
+  //   /* 이상일때의 스크립트 */ 
+  //   if($("main").hasClass("side_off")) {
+  //     $('main').removeClass('side_off');
+  //     $('main').addClass('side_on');
+  //   }
+  // }
+}).resize();
+
 
 // 툴팁 - 팝업오픈
 $('.chat_list button.icon_box_28').on('click', function() {

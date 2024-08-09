@@ -96,9 +96,9 @@
 
 body {margin: 0; padding: 0; background-color: var(--background-col);color: var(--main-txt-col); line-height: 1.4;}
 h1, h2, h3, h4, h5, h6 {font-weight: 500;}
-h1 {font-size: 36px;}
-h2 {font-size: 24px;}
-h3 {font-size: 18px;}
+h1 {font-size: 2.25rem;}
+h2 {font-size: 1.5rem;}
+h3 {font-size: 1.125rem;}
 
 button {border: none; cursor: pointer; display: flex; justify-content: center; align-items: center;}
 button.theme { height: 30px; border-radius: 15px; padding: 0 16px; color: #fcfcfc;  background-color: rgb(245 158 11);}
@@ -119,8 +119,8 @@ svg {fill: var(--main-txt-col);}
 .bt_box_24.active p, .bt_box_36.active p, .bt_box_48.active p {color: var(--active-txt-col);}
 .bt_box_24.active svg, .bt_box_36.active svg, .bt_box_48.active svg {fill:var(--active-txt-col);}
 
-.bt_box_24 {height: 24px; border-radius: 12px; font-size: 14px;}
-.bt_box_24 a {font-size: 14px;}
+.bt_box_24 {height: 24px; border-radius: 12px; font-size: 0.875rem;}
+.bt_box_24 a {font-size: 0.875rem;}
 
 .bt_box_36 {width: 100%; height: 36px; border-radius: 18px;}
 
@@ -189,7 +189,7 @@ main .side_L_container ol, main .side_L_container ul, main .side_L_container li 
 
   /* 2-2. 사이드메뉴_설정 - side_off */
   main .side_L_container .setting_list_bt_box .bt_box_48 {width: 48px;}
-  main .side_L_container .setting_list_bt_box ul {padding: 0px 10px; gap: 8px;}
+  main .side_L_container .setting_list_bt_box ul {padding: 0px 10px; gap: 8px; overflow: hidden;}
   main .side_L_container .setting_list_bt_box .bt_box_48.no_back {background-color: transparent;}
   main .side_L_container .setting_list_bt_box .bt_box_48.no_back:hover {background-color: var(--hover-bt-col);}
   main .side_L_container .setting_list_bt_box .bt_box_48.no_back.active {background-color: var(--active-box-col);}
@@ -247,11 +247,11 @@ main .side_R_container { width: 100%; height: 100vh; }
 /* 3-1. 우측_상단바 ---------------------------------------------------- */
 main .side_R_container .top_bar {width: 100%; height: 64px; padding: 0 16px; margin-bottom: 16px; justify-content:space-between; align-items: center; }
 
-main .side_R_container .top_bar .logo_box {width: auto; flex-grow: 1; }
-main .side_R_container .top_bar .logo_box img {width: auto; height: 36px; }
+main .side_R_container .top_bar .logo_box {width: auto; }
+main .side_R_container .top_bar .logo_box img {width: auto; height: 32px; margin-top: 8px}
 
-main .side_R_container .login_box {width: auto; gap: 6px; }
-main .side_R_container .login_box a {display: flex; justify-content: center; align-items: center; border: 1px solid var(--top-bt-border-col); background-color: var(--top-bt-col); height: 30px; border-radius: 15px; padding: 0 12px; font-size: 12px;    }
+main .side_R_container .login_box {width: auto; gap: 6px; flex-grow: 1; justify-content: flex-end; align-items: flex-start;}
+main .side_R_container .login_box a {display: flex; justify-content: center; align-items: center; border: 1px solid var(--top-bt-border-col); background-color: var(--top-bt-col); height: 30px; border-radius: 15px; padding: 0 12px; font-size: 0.75rem;    }
 main .side_R_container .login_box a:hover {background-color: var(--top-hover-bt-col); font-weight: 500;}
 
 
@@ -314,7 +314,7 @@ main .side_R_container .main_cont_container .main_cont_layout .timeline_area .co
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_setting ul.cont_timeline_setting_container li.cont_timeline_setting_box {flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 16px 0; border-top: 1px solid var(--basic-line-col); }
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_setting ul.cont_timeline_setting_container li.cont_timeline_setting_box:last-child {border-bottom: 1px solid var(--basic-line-col);}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_setting ul.cont_timeline_setting_container li.cont_timeline_setting_box > div:first-child {gap: 8px; width: auto;}
-main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_setting ul.cont_timeline_setting_container li.cont_timeline_setting_box span {width: 100%; padding-left: 28px; margin-top: 4px; font-size: 12px; color: var(--sub-txt-col) }
+main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_setting ul.cont_timeline_setting_container li.cont_timeline_setting_box span {width: 100%; padding-left: 28px; margin-top: 4px; font-size: 0.875rem; color: var(--sub-txt-col) }
 
 
 
@@ -329,7 +329,7 @@ main .side_R_container .main_cont_container .main_cont_layout .timeline_area .co
 
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .timeline_list {position: relative;}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .timeline_list p {width: 100%; padding-right: 50px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
-main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .timeline_list span {font-size: 14px; color: var(--sub-txt-col)}
+main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .timeline_list span {font-size: 0.875rem; color: var(--sub-txt-col)}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .timeline_list .timeline_list_xbt {position: absolute; top: 50%; right: 0px; transform: translate(0, -50%)}
 
 /* 02-02-02. 우) 내 활동 - 날짜별 검색 기록 리스트*/
@@ -346,6 +346,22 @@ main .side_R_container .main_cont_container .main_cont_layout .timeline_area .co
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box.active .cont_timeline_list_icon.close {display: block;}
 
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box.active .cont_timeline_list_icon.open {display: none;}
+
+
+
+
+@media (max-width: 1143px) {
+  main .side_L_container {width: 0px; position: fixed; top:0; left: 0; z-index: 99;}
+  main .side_R_container .top_bar {padding-left: 68px;}
+  main .side_R_container .top_bar .logo_box img {height: 28px;}
+  html, body, a {font-size: 14px;}
+}
+
+@media (max-width: 600px) {
+  main .side_R_container .login_box a:first-child{display: none;}
+}
+
+
 
 
 
