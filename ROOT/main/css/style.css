@@ -6,7 +6,9 @@ a, textarea {font-family: 'Noto Sans KR','돋움',Dotum,'굴림',Gulim,Helvetica
 
 
 
-
+/* 토글 */
+.toggleBG{background: #dddddd; width: 36px; height: 18px; border: 1px solid #dddddd; border-radius: 15px; cursor: pointer;}
+.toggleFG{background: rgba(95, 114, 189, 0.3); width: 16px; height: 16px; border: 2px solid #dddddd; border-radius: 8px; position: relative; left: 0px;}
 
 
 
