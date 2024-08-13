@@ -25,7 +25,7 @@
   --side-box-col: #1B1D25;
   --active-box-col: rgba(87, 0, 145, 1);
   --basic-box-col: rgba(255, 255, 255, 0.15);
-  --hover-box-col: #333333;
+  --hover-box-col: #2A2F47;
   
   --basic-bt-col: rgba(95, 114, 189, 0.2);
   --hover-bt-col: rgba(95, 114, 189, 0.3);
@@ -42,24 +42,25 @@
   --sub-txt-col: #9B9B9B;
   --a-txt-col: #a8c7fa;
   --active-txt-col: #fcfcfc;
+  --hover-txt-col: #dadada;
 }
 
 
 :root[data-theme='null'] {
-  --background-col: #fcfcfc;
-  --side-box-col: #ECEEF5;
+  --background-col: #131314;
+  --side-box-col: #1B1D25;
   --active-box-col: rgba(87, 0, 145, 1);
-  --basic-box-col: rgba(0, 0, 0, 0.2);
-  --hover-box-col: #333333;
-
+  --basic-box-col: rgba(255, 255, 255, 0.15);
+  --hover-box-col: #2A2F47;
+  
   --basic-bt-col: rgba(95, 114, 189, 0.2);
   --hover-bt-col: rgba(95, 114, 189, 0.3);
   --answer-box-col: rgba(95, 114, 189, 0.2);
-  --basic-line-col: rgba(0, 0, 0, 0.1);
+  --basic-line-col: rgba(255, 255, 255, 0.1);
 
-  --top-bt-col: rgba(95, 114, 189, 0.3);
-  --top-bt-border-col: rgba(95, 114, 189, 0.2);
-  --top-hover-bt-col: rgba(95, 114, 189, 0.4);
+  --top-bt-col: rgba(95, 114, 189, 0.2);
+  --top-bt-border-col: rgba(95, 114, 189, 0.1);
+  --top-hover-bt-col: rgba(95, 114, 189, 0.3);
 
   --box-col: #1E1F20;
 
@@ -67,6 +68,7 @@
   --sub-txt-col: #9B9B9B;
   --a-txt-col: #a8c7fa;
   --active-txt-col: #fcfcfc;
+  --hover-txt-col: #dadada;
 }
 
 :root[data-theme='light'] {
@@ -74,7 +76,7 @@
   --side-box-col: #ECEEF5;
   --active-box-col: rgba(87, 0, 145, 1);
   --basic-box-col: rgba(0, 0, 0, 0.2);
-  --hover-box-col: #333333;
+  --hover-box-col: #CDD2E9;
 
   --basic-bt-col: rgba(95, 114, 189, 0.2);
   --hover-bt-col: rgba(95, 114, 189, 0.3);
@@ -91,6 +93,8 @@
   --sub-txt-col: #9B9B9B;
   --a-txt-col: #2012d8;
   --active-txt-col: #fcfcfc;
+  --hover-txt-col: #838383;
+
 }
 
 
@@ -182,7 +186,7 @@ main .side_L_container ol, main .side_L_container ul, main .side_L_container li 
   main .side_L_container .side_menu_area .chat_bt_box .add_newchat_bt_box .bt_box_48 {width: 48px;}
 
   /* 2-1-2. 사이드메뉴_채팅그룹_채팅리스트 - side_off */
-  main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto; gap: 8px;}
+  main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box {overflow-y: auto; gap: 8px; margin-bottom: 8px;}
   main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box .bt_box_36 {width:36px; overflow-x: hidden;}
   main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul {gap: 8px;}
   main .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box > ul {padding: 0 0 0 16px; gap: 8px;}
@@ -234,7 +238,7 @@ main .side_L_container ol, main .side_L_container ul, main .side_L_container li 
 /* main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul > li {position: relative;} */
 /* main.side_on .side_L_container .side_menu_area .chat_bt_box .chat_list_bt_box ul > li .list_sub_menu {position: fixed; left: 272px; top: 0; width: 100px; height: 50px; background-color: #ececec;} */
 main .modal_list_tooltip_menu {display: none; position: fixed; top:0; left: 0; z-index: 10; ; width: 100%; height: 100vh; background-color: rgba(0, 0, 0, 0.4);}
-main .modal_list_tooltip_menu .list_tooltip_menu {border-radius: 6px; position: fixed; left: 250px; top: 0; width: 140px; min-width: 100px; z-index: 11; background-color:var(--side-box-col); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); }
+main .modal_list_tooltip_menu .list_tooltip_menu {border-radius: 6px; position: fixed; left: 260px; top: 0; width: 140px; min-width: 100px; z-index: 11; background-color:var(--side-box-col); box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1); }
 main .modal_list_tooltip_menu .list_tooltip_menu ul {padding: 6px; }
 main .modal_list_tooltip_menu .list_tooltip_menu ul li {border-radius: 6px; }
 
@@ -263,11 +267,23 @@ main .side_R_container .main_cont_container .main_cont_layout .layout_w {max-wid
 
 
 
-/* 01. Chat  ------------------------------ */
-
-/* 01. 우) 질문 & 대답 영역 ------------------------------ */
+/* 00. 우) 질문 & 대답 영역 ------------------------------ */
 main .side_R_container .main_cont_container .main_cont_layout .contents_area {width: 100%; padding:8px 0px 40px; overflow-y: auto;/* background-color: aquamarine;*/ flex-grow: 1;}
-/* 01-01. 우) 질문 text 영역 */
+
+/* 01. NewCaht ------------------------------ */
+
+
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat {gap: 36px; flex-grow: 1; justify-content: center; align-items: center; margin-bottom: 36px;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat > img {margin: 0 auto; width: 250px; max-width: 100%; }
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group {gap: 16px; }
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li {background-color: var(--answer-box-col); border-radius: 8px;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li a {padding: 16px; display: block; min-height: 180px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li a .bt_box_48 {width: 48px; justify-content: center ; align-items: center; margin-left: auto;}
+
+
+/* 02. Chat  ------------------------------ */
+
+/* 02-01. 우) 질문 text 영역 */
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area { min-height: 100%;}
 
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_question {padding-right: 40px; padding-left: 40px; position: relative;}
@@ -275,7 +291,7 @@ main .side_R_container .main_cont_container .main_cont_layout .contents_area .se
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_question .question_list {display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-end;  }
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_question .question_list p {display: inline-block; background-color: var(--answer-box-col); min-height: 28px; padding: 8px 16px; border-radius: 8px;}
 
-/* 01-02. 우) 대답 text 영역 */
+/* 02-02. 우) 대답 text 영역 */
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer ol, 
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer ul {list-style:initial; padding-left: 24px; }
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer {padding-left: 40px; padding-bottom: 40px; position: relative;}
@@ -292,24 +308,35 @@ main .side_R_container .main_cont_container .main_cont_layout .contents_area .se
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_list ol span {font-weight: 500;}
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_list ul span {font-weight: 500;}
 
-main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list {margin: 18px 0; display: flex; gap: 4px; justify-content: flex-start; align-items: flex-start;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list {margin: 24px 0; display: flex; gap: 4px; justify-content: flex-start; align-items: flex-start;}
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list svg {fill: var(--sub-txt-col)}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list a {position: relative;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list a::before {position: absolute; display: none; content:""; white-space:nowrap; bottom: 115% ; left: 50%; transform: translate(-50%, 0); color: var(--hover-txt-col); background-color: var(--hover-box-col); padding: 2px 4px; border-radius: 4px;  font-size: 0.75rem;    }
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list a:nth-child(1):hover::before {content:"답변이 마음에 들어요"; display: block;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list a:nth-child(2):hover::before {content:"답변이 마음에 들지 않아요"; display: block;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list a:nth-child(3):hover::before {content:"복사"; display: block;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list a:nth-child(4):hover::before {content:"공유"; display: block;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_answer .answer_bt_list a:nth-child(5):hover::before {content:"답변 재생성"; display: block;}
 
-/* 01-03. 우) 질문 바 영역 */
+/* 02-03. 우) 질문 바 영역 */
 main .side_R_container .main_cont_container .main_cont_layout .search_q_area { padding: 8px 1rem;}
 main .side_R_container .main_cont_container .main_cont_layout .search_q_area .bt_box_48.no_back:hover {background-color: var(--hover-bt-col);}
 main .side_R_container .main_cont_container .main_cont_layout textarea { width: 100%; border: none; outline: none; resize: none; background-color: transparent; color: var(--main-txt-col); }
+main .side_R_container .main_cont_container .main_cont_layout .search_q_area a {position:relative;}
+main .side_R_container .main_cont_container .main_cont_layout .search_q_area a::after{position: absolute; display: none; content:""; white-space:nowrap; bottom: 125% ; left: 50%; transform: translate(-50%, 0); color: var(--hover-txt-col); background-color: var(--hover-box-col); padding: 2px 4px; border-radius: 4px;  font-size: 0.75rem; z-index: 999;}
+main .side_R_container .main_cont_container .main_cont_layout .search_q_area a.icon_attachment:hover::after{content: "파일첨부"; display: block;}
+main .side_R_container .main_cont_container .main_cont_layout .search_q_area a.icon_send:hover::after{content: "메세지 전송"; display: block;}
 
 
 
-/* 02. TimeLine  ------------------------------ */
+/* 03. TimeLine  ------------------------------ */
 
-/* 02. 우) 활동페이지 - 타이틀 (활동설정/내활동) ------------------------------ */
+/* 03. 우) 활동페이지 - 타이틀 (활동설정/내활동) ------------------------------ */
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_title {margin-bottom: 28px; justify-content: space-between; align-items: center; gap: 2px; }
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_title h2 {flex-grow: 1;}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_title a {padding: 4px 8px;}
 
-/* 02-01. 우) 내 활동 설정 */
+/* 03-01. 우) 내 활동 설정 */
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_setting ul.cont_timeline_setting_container {}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_setting ul.cont_timeline_setting_container li.cont_timeline_setting_box {flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 16px 0; border-top: 1px solid var(--basic-line-col); }
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_setting ul.cont_timeline_setting_container li.cont_timeline_setting_box:last-child {border-bottom: 1px solid var(--basic-line-col);}
@@ -318,11 +345,11 @@ main .side_R_container .main_cont_container .main_cont_layout .timeline_area .co
 
 
 
-/* 02-02. 우) 내 활동 */
+/* 03-02. 우) 내 활동 */
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container {gap: 18px;}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box {transition: 0.3s ease;}
 
-/* 02-02-01. 우) 내 활동 - 날짜별 타이틀*/
+/* 03-02-01. 우) 내 활동 - 날짜별 타이틀*/
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .cont_timeline_list_title_box {padding: 0 16px; justify-content: space-between; align-items: center; cursor: pointer;}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .cont_timeline_list_title_box .cont_timeline_list_title {}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .cont_timeline_list_title_box .cont_timeline_list_iconbox {gap: 8px; width: auto;}
@@ -332,7 +359,7 @@ main .side_R_container .main_cont_container .main_cont_layout .timeline_area .co
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .timeline_list span {font-size: 0.875rem; color: var(--sub-txt-col)}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box .timeline_list .timeline_list_xbt {position: absolute; top: 50%; right: 0px; transform: translate(0, -50%)}
 
-/* 02-02-02. 우) 내 활동 - 날짜별 검색 기록 리스트*/
+/* 03-02-02. 우) 내 활동 - 날짜별 검색 기록 리스트*/
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box ul.timeline_list_box {display: none;}
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box.active ul.timeline_list_box {display: block;}
 
@@ -347,6 +374,8 @@ main .side_R_container .main_cont_container .main_cont_layout .timeline_area .co
 
 main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timeline_list_box.active .cont_timeline_list_icon.open {display: none;}
 
+/* 03-02-03 우) 활동기록없음 안내 */
+main .side_R_container .main_cont_container .main_cont_layout .timeline_area .cont_timeline_list ul.cont_timeline_list_container .cont_timline_list_none {text-align: center; padding: 16px 0; color: var(--sub-txt-col) }
 
 
 
