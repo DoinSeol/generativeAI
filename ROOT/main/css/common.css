@@ -275,10 +275,10 @@ main .side_R_container .main_cont_container .main_cont_layout .contents_area {wi
 
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat {gap: 36px; flex-grow: 1; justify-content: center; align-items: center; margin-bottom: 36px;}
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat > img {margin: 0 auto; width: 250px; max-width: 100%; }
-main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group {gap: 16px; }
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group {gap: 16px; flex-wrap: nowrap;}
 main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li {background-color: var(--answer-box-col); border-radius: 8px;}
-main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li a {padding: 16px; display: block; min-height: 180px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between;}
-main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li a .bt_box_48 {width: 48px; justify-content: center ; align-items: center; margin-left: auto;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li a {padding: 16px; display: block; height: 100%; min-height: 180px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 8px;}
+main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li a .bt_box_48 {flex-shrink: 0; width: 48px; justify-content: center ; align-items: center; margin-left: auto; margin-top: auto;}
 
 
 /* 02. Chat  ------------------------------ */
@@ -390,10 +390,19 @@ main .side_R_container .main_cont_container .main_cont_layout .timeline_area .co
 
 @media (max-width: 600px) {
   main .side_R_container .login_box a:first-child{display: none;}
+
+  main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group {gap: 14px; flex-wrap: wrap;}
+  main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li {width: calc(50% - 7px); }
+  main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li a {padding: 14px; min-height: 140px;}
+
 }
 
 
 
-
+@media (max-width: 400px) {
+  main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group {gap: 10px; flex-wrap: wrap;}
+  main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li {width: 100%; flex-grow: 1;}
+  main .side_R_container .main_cont_container .main_cont_layout .contents_area .search_a_area .cont_newchat .cont_newchat_group li a {padding: 10px; display: block; min-height: 100px; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between;}
+}
 
 
